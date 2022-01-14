@@ -1,15 +1,18 @@
 {
   "name": "@withfig/autocomplete",
-  "version": "2.74.0",
+  "version": "2.78.1",
   "description": "Fig Autocomplete Spec Linter",
   "schemaVersion": "v7",
+  "main": "./build/index",
+  "types": "./build/index.d.ts",
+  "type": "module",
   "browserslist": [
     "safari >=11"
   ],
   "scripts": {
     "dev": "npx @withfig/autocomplete-tools dev",
     "create-spec": "npx @withfig/autocomplete-tools create-spec",
-    "build": "npx @withfig/autocomplete-tools compile; npx ts-node generate-index",
+    "build": "npx @withfig/autocomplete-tools compile; node generate-index.js",
     "lint": "eslint '**/*.ts' && npx prettier --check '**/*.ts'",
     "lint:fix": "eslint '**/*.ts' --fix && npx prettier --write '**/*.ts'",
     "test": "tsc --noEmit && echo 'All specs passed validation. You are ready to push!'",
